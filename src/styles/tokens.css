@@ -1,0 +1,49 @@
+/* Design system tokens — single source of truth. Do not hardcode these values elsewhere. */
+:root {
+  /* Colors */
+  --color-primary: #150f23;
+  --color-ink-deep: #1f1633;
+  --color-on-primary: #ffffff;
+  --color-accent-lime: #c2ef4e;
+  --color-accent-pink: #fa7faa;
+  --color-accent-violet: #6a5fc1;
+  --color-accent-violet-deep: #422082;
+  --color-accent-violet-mid: #79628c;
+  --color-surface-dark: #1f1633;
+  --color-surface-light: #ffffff;
+  --color-surface-night: #150f23;
+  --color-on-dark-muted: #bdb8c0;
+  --color-on-dark-faint: rgba(255, 255, 255, 0.18);
+  --color-hairline-violet: #362d59;
+  --color-hairline-cool: #cfcfdb;
+  --color-hairline-cloud: #e5e7eb;
+
+  /* Mazda Soul Red — brand accent (buttons, rings, accents) */
+  --color-soul-red: #C41230;
+
+  /* WhatsApp brand green (success CTA only) */
+  --color-whatsapp: #25d366;
+
+  /* Border radius */
+  --rounded-xs: 4px;
+  --rounded-sm: 6px;
+  --rounded-md: 8px;
+  --rounded-lg: 10px;
+  --rounded-xl: 12px;
+  --rounded-xxl: 18px;
+  --rounded-full: 9999px;
+
+  /* Spacing (base unit 8px) */
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+  --space-section: 96px;
+
+  /* Typography */
+  --font-ui: 'Rubik', system-ui, sans-serif;
+  --font-mono: 'Monaco', 'Menlo', monospace;
+}

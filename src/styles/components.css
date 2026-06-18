@@ -1,0 +1,560 @@
+/* Reusable component classes built strictly from design-system tokens. */
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  padding: 12px 16px;
+  border-radius: var(--rounded-md);
+  transition: opacity 0.15s ease, transform 0.05s ease;
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.btn:not(:disabled):active {
+  transform: translateY(1px);
+}
+.btn--full {
+  width: 100%;
+}
+
+/* primary: always near-black regardless of canvas polarity */
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* inverted: white pill on dark canvas */
+.btn--inverted {
+  background: var(--color-on-primary);
+  color: var(--color-ink-deep);
+}
+
+/* ghost: secondary on dark canvas */
+.btn--ghost {
+  background: var(--color-on-dark-faint);
+  color: var(--color-on-primary);
+  border-radius: var(--rounded-xl);
+  padding: 8px 16px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+/* whatsapp: primary conversion CTA on success */
+.btn--whatsapp {
+  background: var(--color-whatsapp);
+  color: var(--color-on-primary);
+  border-radius: var(--rounded-full);
+}
+
+/* ── Selection card ────────────────────────────────────────────────────────── */
+.selection-card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--color-ink-deep);
+  color: var(--color-on-primary);
+  border-radius: var(--rounded-xxl);
+  padding: var(--space-xxl);
+  border: 1px solid var(--color-hairline-violet);
+}
+.selection-card--selected {
+  border: 2px solid var(--color-accent-lime);
+}
+.selection-card--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Cards ─────────────────────────────────────────────────────────────────── */
+.card-dark {
+  background: var(--color-ink-deep);
+  color: var(--color-on-primary);
+  border-radius: var(--rounded-xxl);
+  padding: var(--space-xxl);
+  border: 1px solid var(--color-hairline-violet);
+}
+.card-light {
+  background: var(--color-surface-light);
+  color: var(--color-ink-deep);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-xxl);
+  border: 1px solid var(--color-hairline-cloud);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px;
+}
+
+/* ── Text input ────────────────────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.field__label {
+  font-size: 14px;
+  font-weight: 500;
+}
+.text-input {
+  background: var(--color-surface-light);
+  color: var(--color-ink-deep);
+  border-radius: var(--rounded-sm);
+  padding: 8px 12px;
+  border: 1px solid var(--color-hairline-cool);
+}
+.text-input:focus {
+  outline: none;
+  border-color: var(--color-accent-violet);
+}
+.text-input--error {
+  border-color: var(--color-accent-pink);
+}
+.field__error {
+  font-size: 14px;
+  color: var(--color-accent-pink);
+}
+.select {
+  min-height: 44px;
+  background: var(--color-surface-light);
+  color: var(--color-ink-deep);
+  border-radius: var(--rounded-sm);
+  padding: 8px 12px;
+  border: 1px solid var(--color-hairline-cool);
+}
+.select:focus {
+  outline: none;
+  border-color: var(--color-accent-violet);
+}
+.consent-text {
+  color: var(--color-accent-violet-mid);
+}
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.opt-chip {
+  min-height: 44px;
+  padding: 8px 16px;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--color-hairline-cool);
+  background: var(--color-surface-light);
+  color: var(--color-ink-deep);
+  font-weight: 500;
+}
+.opt-chip.is-active {
+  border: 2px solid var(--color-accent-violet);
+}
+.link-btn {
+  align-self: center;
+  color: var(--color-accent-violet);
+  text-decoration: underline;
+  font-weight: 500;
+}
+.back-link {
+  align-self: flex-start;
+  color: inherit;
+  opacity: 0.7;
+  font-weight: 500;
+}
+.back-link:hover {
+  opacity: 1;
+}
+
+/* ── Stack + service cards ────────────────────────────────────────────────────── */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.service-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+.service-card__desc {
+  margin-top: var(--space-xs);
+  color: var(--color-on-dark-muted);
+}
+.select-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+.select-row__chev {
+  color: var(--color-on-dark-muted);
+  font-size: 24px;
+  line-height: 1;
+}
+.gen-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+.gen-card__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+.gen-card__years {
+  color: var(--color-on-dark-muted);
+}
+.gen-card__photo {
+  flex: 0 0 40%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--rounded-lg);
+  background: var(--color-surface-night);
+  border: 1px solid var(--color-hairline-violet);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gen-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gen-card__glyph {
+  width: 64%;
+  opacity: 0.75;
+}
+.pkg-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+.pkg-card__price {
+  font-size: 20px;
+  font-weight: 700;
+}
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.summary__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+.summary__row--strong {
+  font-size: 20px;
+  font-weight: 700;
+}
+.summary__rule {
+  border: none;
+  border-top: 1px solid var(--color-hairline-violet);
+}
+.badge-soon {
+  flex: none;
+  background: var(--color-accent-violet);
+  color: var(--color-on-primary);
+  border-radius: var(--rounded-full);
+  padding: var(--space-xxs) var(--space-md);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ── Rotating headline (entry hero) ──────────────────────────────────────── */
+.rotating-headline {
+  min-height: 5rem;        /* prevents layout shift between short/long lines */
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.rotating-headline--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Trust bar + review strip (entry hero) ────────────────────────────────── */
+.trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+.trust-bar__pill {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-accent-lime);
+  background: var(--color-on-dark-faint);
+  border: 1px solid var(--color-hairline-violet);
+  border-radius: var(--rounded-full);
+  padding: var(--space-xxs) var(--space-md);
+}
+.review-strip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.review-card {
+  background: var(--color-ink-deep);
+  border: 1px solid var(--color-hairline-violet);
+  border-radius: var(--rounded-xl);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.review-card__stars {
+  color: var(--color-accent-lime);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.review-card__text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-on-primary);
+}
+.review-card__name {
+  font-size: 13px;
+  color: var(--color-on-dark-muted);
+  font-weight: 500;
+}
+
+/* ── Most popular badge (package select) ──────────────────────────────────── */
+.badge-popular {
+  display: inline-block;
+  background: var(--color-accent-lime);
+  color: var(--color-ink-deep);
+  border-radius: var(--rounded-full);
+  padding: var(--space-xxs) var(--space-md);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+/* ── Keyword chip ──────────────────────────────────────────────────────────── */
+.chip-lime {
+  background: var(--color-accent-lime);
+  color: var(--color-ink-deep);
+  border-radius: var(--rounded-xs);
+  padding: 2px 14px;
+  margin: 0 -12px;
+}
+
+/* ── Progress bar ──────────────────────────────────────────────────────────── */
+.progress {
+  position: sticky;
+  top: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--color-on-dark-faint);
+}
+.progress__fill {
+  height: 100%;
+  background: var(--color-accent-lime);
+  transition: width 0.3s ease;
+}
+
+/* ── Language toggle (fixed top-right) ────────────────────────────────────────── */
+.lang-toggle {
+  position: fixed;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: rgba(21, 15, 35, 0.6);
+  border: 1px solid var(--color-hairline-violet);
+  border-radius: var(--rounded-full);
+  padding: var(--space-xxs) var(--space-sm);
+  backdrop-filter: blur(6px);
+}
+.lang-toggle__icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-on-primary);
+}
+.lang-toggle__seg {
+  display: flex;
+  gap: var(--space-xxs);
+}
+.lang-toggle__btn {
+  min-height: 32px;
+  padding: var(--space-xxs) var(--space-sm);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--color-on-dark-muted);
+  border-radius: var(--rounded-full);
+}
+.lang-toggle__btn.is-active {
+  background: var(--color-on-primary);
+  color: var(--color-ink-deep);
+}
+
+/* ── Car stage (sticky spinning silhouette + progress ring) ──────────────────── */
+.car-stage {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) 0 var(--space-xxl);
+  background: var(--color-surface-night);
+  pointer-events: none;
+  /* ponytail: bottom-fade mask — swap .car-stage content for an mp4 and this
+     blends the video into the first section's back-link/heading automatically */
+  -webkit-mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+}
+.car-stage__svg {
+  width: 180px;
+  height: 180px;
+}
+.car-stage__track {
+  fill: none;
+  stroke: var(--color-on-dark-faint);
+  stroke-width: 6;
+}
+.car-stage__ring {
+  fill: none;
+  stroke: var(--color-accent-lime);
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+.car-stage__ring-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.car-stage__car-img {
+  position: absolute;
+  width: 148px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: drop-shadow(0 4px 16px rgba(196, 18, 48, 0.35));
+}
+.car-stage__meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+  color: var(--color-on-primary);
+}
+.car-stage__pct {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+}
+.car-stage__model {
+  font-size: 14px;
+  color: var(--color-on-dark-muted);
+}
+
+/* ── Scroll-reveal sections ──────────────────────────────────────────────────── */
+.reveal-app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-night);
+}
+.reveal {
+  display: flex;
+  flex-direction: column;
+}
+.reveal-section {
+  width: 100%;
+  animation: reveal-in 0.45s ease both;
+}
+.reveal-section--dark {
+  background: var(--color-surface-dark);
+  color: var(--color-on-primary);
+}
+.reveal-section--light {
+  background: var(--color-surface-light);
+  color: var(--color-ink-deep);
+}
+.reveal-section__inner {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--space-xxl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.reveal-section--done {
+  display: none;
+}
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section,
+  .car-stage__ring {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ── Step layout ───────────────────────────────────────────────────────────── */
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.step--dark {
+  background: var(--color-surface-dark);
+  color: var(--color-on-primary);
+}
+.step--light {
+  background: var(--color-surface-light);
+  color: var(--color-ink-deep);
+}
+.step__body {
+  flex: 1;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg) var(--space-xxl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.step__back {
+  align-self: flex-start;
+}
+
+/* spinner for loading buttons */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--rounded-full);
+  animation: spin 0.6s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

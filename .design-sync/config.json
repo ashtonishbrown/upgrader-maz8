@@ -1,0 +1,35 @@
+{
+  "projectId": "4a1d5b38-2ecb-4d64-bc62-050578582c0b",
+  "shape": "package",
+  "pkg": "mazda-upgrader",
+  "globalName": "MazdaDS",
+  "buildCmd": "npm run build:lib",
+  "cssEntry": "dist/index.css",
+  "provider": {
+    "component": "LanguageProvider"
+  },
+  "componentSrcMap": {
+    "Button": "src/components/Button.jsx",
+    "TextInput": "src/components/TextInput.jsx",
+    "ProgressBar": "src/components/ProgressBar.jsx",
+    "SelectionCard": "src/components/SelectionCard.jsx",
+    "StepLayout": "src/components/StepLayout.jsx",
+    "CarStage": "src/components/CarStage.jsx",
+    "LanguageToggle": "src/components/LanguageToggle.jsx",
+    "LanguageProvider": null
+  },
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "StepLayout": {"cardMode": "column"},
+    "LanguageToggle": {"cardMode": "single"}
+  },
+  "dtsPropsFor": {
+    "Button": "variant?: 'primary' | 'inverted' | 'ghost' | 'whatsapp'; full?: boolean; loading?: boolean; loadingLabel?: string; disabled?: boolean; type?: string; onClick?: () => void; children?: React.ReactNode;",
+    "TextInput": "label?: string; value?: string; onChange?: (value: string) => void; type?: string; placeholder?: string; required?: boolean; error?: string; inputMode?: string; autoComplete?: string;",
+    "ProgressBar": "value?: number;",
+    "SelectionCard": "selected?: boolean; disabled?: boolean; onClick?: () => void; children?: React.ReactNode;",
+    "StepLayout": "canvas?: 'dark' | 'light'; progress?: number; onBack?: () => void; children?: React.ReactNode;",
+    "CarStage": "progress?: number; model?: string;",
+    "LanguageToggle": ""
+  }
+}
