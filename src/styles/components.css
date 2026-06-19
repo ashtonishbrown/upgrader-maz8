@@ -351,6 +351,7 @@
 .progress {
   position: sticky;
   top: 0;
+  z-index: 15;
   height: 3px;
   width: 100%;
   background: var(--color-on-dark-faint);
@@ -399,22 +400,29 @@
   color: var(--color-ink-deep);
 }
 
-/* ── Car stage (sticky spinning silhouette + progress ring) ──────────────────── */
+/* ── Car stage (sticky full-bleed video header + progress ring overlay) ──────── */
 .car-stage {
   position: sticky;
-  top: 0;
+  top: 3px;
   z-index: 10;
+  height: 260px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-lg) 0 var(--space-xxl);
   background: var(--color-surface-night);
   pointer-events: none;
-  /* ponytail: bottom-fade mask — swap .car-stage content for an mp4 and this
-     blends the video into the first section's back-link/heading automatically */
-  -webkit-mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 66%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 66%, transparent 100%);
+}
+.car-stage__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 .car-stage__svg {
   width: 180px;
@@ -434,19 +442,13 @@
 }
 .car-stage__ring-wrap {
   position: relative;
+  z-index: 1;
   width: 180px;
   height: 180px;
 }
-.car-stage__car-img {
-  position: absolute;
-  width: 148px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  filter: drop-shadow(0 4px 16px rgba(196, 18, 48, 0.35));
-}
 .car-stage__meta {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: baseline;
   gap: var(--space-sm);
