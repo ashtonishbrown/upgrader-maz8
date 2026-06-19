@@ -199,7 +199,7 @@ export default function App() {
     <div className="reveal-app">
       <ProgressBar value={progressFor(active, data)} />
       <LanguageToggle />
-      <CarStage progress={progressFor(active, data)} model={data.vehicle_model} />
+      <CarStage />
       <div className="reveal">
         {revealed.map((step, i) => {
           const isActive = i === revealed.length - 1;

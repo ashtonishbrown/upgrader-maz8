@@ -400,21 +400,15 @@
   color: var(--color-ink-deep);
 }
 
-/* ── Car stage (sticky full-bleed video header + progress ring overlay) ──────── */
+/* ── Car stage (sticky full-bleed video header) ──────────────────────────────── */
 .car-stage {
   position: sticky;
   top: 3px;
   z-index: 10;
-  height: 260px;
+  height: 240px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background: var(--color-surface-night);
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 66%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 66%, transparent 100%);
 }
 .car-stage__video {
   position: absolute;
@@ -423,46 +417,6 @@
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-}
-.car-stage__svg {
-  width: 180px;
-  height: 180px;
-}
-.car-stage__track {
-  fill: none;
-  stroke: var(--color-on-dark-faint);
-  stroke-width: 6;
-}
-.car-stage__ring {
-  fill: none;
-  stroke: var(--color-accent-lime);
-  stroke-width: 6;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.5s ease;
-}
-.car-stage__ring-wrap {
-  position: relative;
-  z-index: 1;
-  width: 180px;
-  height: 180px;
-}
-.car-stage__meta {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-sm);
-  margin-top: var(--space-xs);
-  color: var(--color-on-primary);
-}
-.car-stage__pct {
-  font-family: var(--font-mono);
-  font-size: 18px;
-  font-weight: 700;
-}
-.car-stage__model {
-  font-size: 14px;
-  color: var(--color-on-dark-muted);
 }
 
 /* ── Scroll-reveal sections ──────────────────────────────────────────────────── */
