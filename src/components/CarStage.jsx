@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-// ponytail: drop first-frames.mp4 into public/ — no rebuild needed
-const firstFrames = '/first-frames.mp4';
+import firstFrames from '../assets/first-frames.mp4';
 
 const RING_R = 86;
 const RING_C = 2 * Math.PI * RING_R;
