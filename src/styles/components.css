@@ -407,7 +407,7 @@
   z-index: 10;
   height: 180px;
   overflow: hidden;
-  background: var(--color-surface-night);
+  background: var(--color-surface-dark);
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
