@@ -180,8 +180,9 @@ export default function App() {
     };
   }, []);
 
-  // Auto-scroll the newest section into view.
+  // Auto-scroll the newest section into view (skip initial load).
   useEffect(() => {
+    if (revealed.length <= 1) return;
     const last = document.querySelector('.reveal-section:last-child');
     last?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [revealed.length]);

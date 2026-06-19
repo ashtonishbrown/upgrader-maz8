@@ -409,17 +409,19 @@
   overflow: hidden;
   background: var(--color-surface-night);
   pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
 }
 .car-stage__video {
   position: absolute;
-  top: 16px;
-  left: 36px;
-  width: calc(100% - 72px);
-  height: calc(100% - 32px);
+  top: 14px;
+  left: 32px;
+  width: calc(100% - 64px);
+  height: calc(100% - 28px);
   object-fit: cover;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse 86% 82% at 50% 50%, black 42%, transparent 68%);
-  mask-image: radial-gradient(ellipse 86% 82% at 50% 50%, black 42%, transparent 68%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 72%);
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 72%);
 }
 
 /* ── Scroll-reveal sections ──────────────────────────────────────────────────── */
