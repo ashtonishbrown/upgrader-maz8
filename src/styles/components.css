@@ -268,14 +268,19 @@
 
 /* ── Rotating headline (entry hero) ──────────────────────────────────────── */
 .rotating-headline {
-  min-height: 5rem;        /* prevents layout shift between short/long lines */
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  min-height: 5rem;
 }
 .rotating-headline--in {
   opacity: 1;
-  transform: translateY(0);
+}
+.typing-cursor {
+  display: inline-block;
+  margin-left: 1px;
+  animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
 /* ── Trust bar + review strip (entry hero) ────────────────────────────────── */
@@ -412,10 +417,9 @@
 }
 .car-stage__video {
   position: absolute;
-  top: 52px;
-  left: 32px;
-  width: calc(100% - 64px);
-  height: calc(100% - 66px);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   pointer-events: none;
   -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 72%);

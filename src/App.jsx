@@ -318,24 +318,61 @@ function Block({ title, sub, children }) {
   );
 }
 
+// Parse "{word}" markers into segments for char-by-char typing with chip styling.
+function parseSegments(str) {
+  const out = [];
+  const re = /\{([^}]+)\}/g;
+  let last = 0, m;
+  while ((m = re.exec(str)) !== null) {
+    if (m.index > last) out.push({ text: str.slice(last, m.index), chip: false });
+    out.push({ text: m[1], chip: true });
+    last = m.index + m[0].length;
+  }
+  if (last < str.length) out.push({ text: str.slice(last), chip: false });
+  return out;
+}
+
 function RotatingHeadline({ headlines }) {
   const [idx, setIdx] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [chars, setChars] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+  const segments = parseSegments(headlines[idx]);
+  const total = segments.reduce((n, s) => n + s.text.length, 0);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setIdx(i => (i + 1) % headlines.length);
-        setVisible(true);
-      }, 350);
-    }, 3500);
-    return () => clearInterval(id);
-  }, [headlines.length]);
+    let t;
+    if (!deleting && chars < total) {
+      t = setTimeout(() => setChars(c => c + 1), 55);
+    } else if (!deleting && chars === total) {
+      t = setTimeout(() => setDeleting(true), 2200);
+    } else if (deleting && chars > 0) {
+      t = setTimeout(() => setChars(c => c - 1), 28);
+    } else if (deleting && chars === 0) {
+      setIdx(i => (i + 1) % headlines.length);
+      setDeleting(false);
+    }
+    return () => clearTimeout(t);
+  }, [chars, deleting, total, headlines.length]);
+
+  // Reset char count when headline changes.
+  useEffect(() => { setChars(0); }, [idx]);
+
+  // Render chars up to `chars`, preserving chip spans.
+  let remaining = chars;
+  const nodes = segments.map((seg, i) => {
+    if (remaining <= 0) return null;
+    const visible = seg.text.slice(0, remaining);
+    remaining -= seg.text.length;
+    if (!visible) return null;
+    return seg.chip
+      ? <span key={i} className="chip-lime">{visible}</span>
+      : <span key={i}>{visible}</span>;
+  });
 
   return (
-    <h2 className={`t-heading-lg rotating-headline${visible ? ' rotating-headline--in' : ''}`}>
-      {withChips(headlines[idx])}
+    <h2 className="t-heading-lg rotating-headline rotating-headline--in">
+      {nodes}
+      <span className="typing-cursor">|</span>
     </h2>
   );
 }
