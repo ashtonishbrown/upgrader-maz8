@@ -354,7 +354,7 @@
   z-index: 15;
   height: 3px;
   width: 100%;
-  background: var(--color-on-dark-faint);
+  background: var(--color-surface-dark);
 }
 .progress__fill {
   height: 100%;
@@ -405,17 +405,17 @@
   position: sticky;
   top: 3px;
   z-index: 10;
-  height: 180px;
+  height: 210px;
   overflow: hidden;
   background: var(--color-surface-dark);
   pointer-events: none;
 }
 .car-stage__video {
   position: absolute;
-  top: 14px;
+  top: 52px;
   left: 32px;
   width: calc(100% - 64px);
-  height: calc(100% - 28px);
+  height: calc(100% - 66px);
   object-fit: cover;
   pointer-events: none;
   -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 72%);
