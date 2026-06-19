@@ -180,11 +180,17 @@ export default function App() {
     };
   }, []);
 
-  // Auto-scroll the newest section into view (skip initial load).
+  // Auto-scroll the newest section into view, offset by sticky header height.
   useEffect(() => {
     if (revealed.length <= 1) return;
-    const last = document.querySelector('.reveal-section:last-child');
-    last?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.querySelector('.reveal-section:last-child');
+    if (!el) return;
+    const stickyHeight =
+      (document.querySelector('.progress')?.offsetHeight || 0) +
+      (document.querySelector('.car-stage')?.offsetHeight || 0) +
+      8;
+    const top = el.getBoundingClientRect().top + window.scrollY - stickyHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
   }, [revealed.length]);
 
   // Persist the lead once, when the funnel terminates.
