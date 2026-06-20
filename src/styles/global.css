@@ -42,7 +42,7 @@ input {
 /* Type scale (from design system) */
 .t-heading-lg {
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
 }
 .t-heading-md {

@@ -261,9 +261,9 @@ function Placeholder({ step, data, active, set, advance, dispatch }) {
             {t('common.checkMazda')}
           </Button>
           <div className="trust-bar">
-            <span className="trust-bar__pill">✓ 200+ installs</span>
-            <span className="trust-bar__pill">✓ 12-month warranty</span>
-            <span className="trust-bar__pill">✓ KL · Selangor · NS</span>
+            <span className="trust-bar__pill">200+ installs</span>
+            <span className="trust-bar__pill">12-month warranty</span>
+            <span className="trust-bar__pill">KL · Selangor · NS</span>
           </div>
           <div className="review-strip">
             {REVIEWS.map((r, i) => (
