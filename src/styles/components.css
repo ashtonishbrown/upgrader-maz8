@@ -528,6 +528,7 @@
   right: 0;
   padding: 0 var(--space-xl);
   color: var(--color-on-primary);
+  text-align: center;
 }
 .intro-overlay__headline .rotating-headline {
   font-size: 44px;
@@ -554,6 +555,9 @@
   display: flex;
   flex-direction: column;
   background: var(--color-surface-night);
+  max-width: 480px;
+  width: 100%;
+  margin-inline: auto;
 }
 .reveal {
   display: flex;

@@ -233,7 +233,7 @@ export default function App() {
           <div className="intro-overlay__scrim" />
           <div className="intro-overlay__headline">
             <RotatingHeadline
-              headlines={LOCALIZED_HEADLINES.en}
+              headlines={[LOCALIZED_HEADLINES.en[0]]}
               onComplete={handleIntroComplete}
             />
           </div>
