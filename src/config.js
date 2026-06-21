@@ -49,26 +49,26 @@ export const MALAYSIAN_STATES = [
 // generation images in later without touching the card layout.
 export const VEHICLES = {
   'Mazda 2': {
-    DE: { supported: false, reason: 'This generation does not support Mazda Connect infotainment.', years: '2007–2014', photo: mazda2De,  photoPosition: 'center 52%' },
-    DJ: { supported: true,  years: '2014–present', photo: mazda2Dj, photoPosition: 'center 52%' },
+    DE: { supported: false, reason: 'This generation does not support Mazda Connect infotainment.', years: '2007–2014', photo: mazda2De },
+    DJ: { supported: true,  years: '2014–present', photo: mazda2Dj },
   },
   'Mazda 3': {
-    'BM/BN': { supported: true, years: '2013–2018', photo: mazda3Bm, photoPosition: 'left center' },
-    BP:      { supported: true, years: '2019–present', photo: mazda3Bp, photoPosition: 'left center' },
+    'BM/BN': { supported: true, years: '2013–2018', photo: mazda3Bm },
+    BP:      { supported: true, years: '2019–present', photo: mazda3Bp },
   },
   'Mazda 6': {
-    GJ: { supported: true, years: '2012–2018', photo: mazda6Gj, photoPosition: 'left center' },
-    GL: { supported: true, years: '2018–present', photo: mazda6Gl, photoPosition: 'left center' },
+    GJ: { supported: true, years: '2012–2018', photo: mazda6Gj },
+    GL: { supported: true, years: '2018–present', photo: mazda6Gl },
   },
   'Mazda CX-3': {
-    DK: { supported: true, years: '2015–present', photo: cx3Dk, photoPosition: 'left center' },
+    DK: { supported: true, years: '2015–present', photo: cx3Dk },
   },
   'Mazda CX-5': {
-    KE: { supported: true, note: 'Configurable — confirm head unit variant', years: '2012–2017', photo: cx5Ke, photoPosition: 'left center' },
-    KF: { supported: true, years: '2017–present', photo: cx5Kf, photoPosition: 'left center' },
+    KE: { supported: true, note: 'Configurable — confirm head unit variant', years: '2012–2017', photo: cx5Ke },
+    KF: { supported: true, years: '2017–present', photo: cx5Kf },
   },
   'Mazda MX-5': {
-    ND: { supported: true, years: '2015–present', photo: mx5Nd, photoPosition: 'left center' },
+    ND: { supported: true, years: '2015–present', photo: mx5Nd },
   },
 };
 
