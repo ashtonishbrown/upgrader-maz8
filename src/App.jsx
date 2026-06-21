@@ -14,6 +14,7 @@ import AppointmentDetails from './steps/AppointmentDetails.jsx';
 import SuccessState from './steps/SuccessState.jsx';
 import { useT, useLang, withChips } from './i18n.jsx';
 import firstFrames from './assets/first-frames.mp4';
+import autokraftLogo from './assets/autokraft-logo.svg';
 import {
   SERVICES,
   getCompatibility,
@@ -277,7 +278,7 @@ function TopBar({ canGoBack, onBack }) {
         )}
       </div>
       <div className="top-bar__center">
-        <span className="top-bar__logo">AutoKraft</span>
+        <img src={autokraftLogo} alt="AutoKraft" className="top-bar__logo-img" />
       </div>
       <div className="top-bar__right">
         <LanguageToggle />

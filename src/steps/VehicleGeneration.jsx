@@ -25,7 +25,7 @@ export default function VehicleGeneration({ data, advance }) {
                 </div>
                 <div className="gen-card__photo">
                   {g?.photo ? (
-                    <img src={g.photo} alt={`${model} ${code}`} />
+                    <img src={g.photo} alt={`${model} ${code}`} style={{ objectPosition: g.photoPosition || 'left center' }} />
                   ) : (
                     <CarThumb />
                   )}

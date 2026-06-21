@@ -4,6 +4,19 @@
 // they must never embed these values or rules inline.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import mazda2De  from './assets/cars/mazda2-de.png';
+import mazda2Dj  from './assets/cars/mazda2-dj.png';
+import mazda3Bm  from './assets/cars/mazda3-bm.png';
+import mazda3Bp  from './assets/cars/mazda3-bp.png';
+import mazda6Gj  from './assets/cars/mazda6-gj.png';
+import mazda6Gl  from './assets/cars/mazda6-gl.png';
+import cx3Dk     from './assets/cars/cx3-dk.png';
+import cx5Ke     from './assets/cars/cx5-ke.png';
+import cx5Kf     from './assets/cars/cx5-kf.png';
+import mx5Nd     from './assets/cars/mx5-nd.png';
+import usbAA     from './assets/usb-aa.png';
+import usbAC     from './assets/usb-ac.png';
+
 // TODO: replace with the real Malaysian WhatsApp number before launch.
 // Format: country code + number, digits only, no "+". e.g. '60123456789'
 export const WHATSAPP_NUMBER = '60XXXXXXXXX';
@@ -36,26 +49,26 @@ export const MALAYSIAN_STATES = [
 // generation images in later without touching the card layout.
 export const VEHICLES = {
   'Mazda 2': {
-    DE: { supported: false, reason: 'This generation does not support Mazda Connect infotainment.', years: '2007–2014', photo: null },
-    DJ: { supported: true, years: '2014–present', photo: null },
+    DE: { supported: false, reason: 'This generation does not support Mazda Connect infotainment.', years: '2007–2014', photo: mazda2De,  photoPosition: 'center 52%' },
+    DJ: { supported: true,  years: '2014–present', photo: mazda2Dj, photoPosition: 'center 52%' },
   },
   'Mazda 3': {
-    'BM/BN': { supported: true, years: '2013–2018', photo: null },
-    BP: { supported: true, years: '2019–present', photo: null },
+    'BM/BN': { supported: true, years: '2013–2018', photo: mazda3Bm, photoPosition: 'left center' },
+    BP:      { supported: true, years: '2019–present', photo: mazda3Bp, photoPosition: 'left center' },
   },
   'Mazda 6': {
-    GJ: { supported: true, years: '2012–2018', photo: null },
-    GL: { supported: true, years: '2018–present', photo: null },
+    GJ: { supported: true, years: '2012–2018', photo: mazda6Gj, photoPosition: 'left center' },
+    GL: { supported: true, years: '2018–present', photo: mazda6Gl, photoPosition: 'left center' },
   },
   'Mazda CX-3': {
-    DK: { supported: true, years: '2015–present', photo: null },
+    DK: { supported: true, years: '2015–present', photo: cx3Dk, photoPosition: 'left center' },
   },
   'Mazda CX-5': {
-    KE: { supported: true, note: 'Configurable — confirm head unit variant', years: '2012–2017', photo: null },
-    KF: { supported: true, years: '2017–present', photo: null },
+    KE: { supported: true, note: 'Configurable — confirm head unit variant', years: '2012–2017', photo: cx5Ke, photoPosition: 'left center' },
+    KF: { supported: true, years: '2017–present', photo: cx5Kf, photoPosition: 'left center' },
   },
   'Mazda MX-5': {
-    ND: { supported: true, years: '2015–present', photo: null },
+    ND: { supported: true, years: '2015–present', photo: mx5Nd, photoPosition: 'left center' },
   },
 };
 
@@ -70,8 +83,8 @@ export const PRICING = {
 // Wired: user chooses. Wireless: auto-assigned, no choice offered.
 export const USB_OPTIONS = {
   wired: [
-    { id: 'usb_a', label: 'USB-A + USB-A (included)', usb_c: false, photo: null },
-    { id: 'usb_c', label: 'USB-A + USB-C (+RM120)', usb_c: true, photo: null },
+    { id: 'usb_a', label: 'USB-A + USB-A (included)', usb_c: false, photo: usbAA },
+    { id: 'usb_c', label: 'USB-A + USB-C (+RM120)',   usb_c: true,  photo: usbAC },
   ],
   wireless: { id: 'usb_c', label: 'USB-A + USB-C', usb_c: true },
 };

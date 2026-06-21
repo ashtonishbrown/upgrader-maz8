@@ -313,10 +313,11 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  margin-inline: calc(-1 * var(--space-lg));
-  padding-inline: var(--space-lg);
+  padding-inline-end: var(--space-lg);
   padding-bottom: var(--space-xs);
   touch-action: pan-x;
+  -webkit-mask-image: linear-gradient(to right, black 72%, transparent 100%);
+  mask-image: linear-gradient(to right, black 72%, transparent 100%);
 }
 .review-strip::-webkit-scrollbar {
   display: none;
@@ -419,6 +420,11 @@
   text-transform: uppercase;
   color: var(--color-on-primary);
   white-space: nowrap;
+}
+.top-bar__logo-img {
+  height: 20px;
+  width: auto;
+  display: block;
 }
 .top-bar__back {
   min-height: auto;
