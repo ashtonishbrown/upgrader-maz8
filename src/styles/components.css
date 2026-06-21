@@ -428,13 +428,13 @@
 }
 .top-bar__back {
   min-height: auto;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--color-on-primary);
   opacity: 0.75;
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 3px;
   white-space: nowrap;
 }
 .top-bar__back:hover { opacity: 1; }
@@ -446,18 +446,18 @@
   gap: var(--space-xs);
 }
 .lang-toggle__icon {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   color: var(--color-on-primary);
 }
 .lang-toggle__seg {
   display: flex;
-  gap: var(--space-xxs);
+  gap: 2px;
 }
 .lang-toggle__btn {
-  min-height: 32px;
-  padding: var(--space-xxs) var(--space-sm);
-  font-size: 12px;
+  min-height: 24px;
+  padding: 1px 5px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.2px;
   color: var(--color-on-dark-muted);

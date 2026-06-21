@@ -186,7 +186,7 @@ export default function App() {
       const dx = e.changedTouches[0].clientX - touchRef.current.x;
       const dy = Math.abs(e.changedTouches[0].clientY - touchRef.current.y);
       touchRef.current = null;
-      if (dx < -60 && dy < 80) dispatch({ type: 'BACK' });
+      if (dx > 60 && dy < 80) dispatch({ type: 'BACK' });
     };
     document.addEventListener('touchstart', onStart, { passive: true });
     document.addEventListener('touchend',   onEnd,   { passive: true });

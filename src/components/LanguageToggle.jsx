@@ -1,8 +1,19 @@
+import { useRef } from 'react';
 import { LANGUAGES, useLang } from '../i18n.jsx';
 
-// Fixed top-right segmented language switcher with a globe mark.
 export default function LanguageToggle() {
   const { lang, setLang } = useLang();
+  const segRef = useRef(null);
+
+  function langFromTouch(e) {
+    const touch = e.touches[0];
+    const rect = segRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = Math.max(0, touch.clientX - rect.left);
+    const idx = Math.min(LANGUAGES.length - 1, Math.floor(x / (rect.width / LANGUAGES.length)));
+    setLang(LANGUAGES[idx].code);
+  }
+
   return (
     <div className="lang-toggle">
       <svg className="lang-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -14,7 +25,7 @@ export default function LanguageToggle() {
           strokeWidth="1.6"
         />
       </svg>
-      <div className="lang-toggle__seg" role="group" aria-label="Language">
+      <div className="lang-toggle__seg" ref={segRef} role="group" aria-label="Language" onTouchMove={langFromTouch}>
         {LANGUAGES.map((l) => (
           <button
             key={l.code}
